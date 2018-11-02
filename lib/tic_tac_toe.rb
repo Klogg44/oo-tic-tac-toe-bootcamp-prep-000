@@ -101,7 +101,7 @@ class TicTacToe
       false
     end
   end
-  
+
   def over?
     if draw? || won?
       true
@@ -109,18 +109,18 @@ class TicTacToe
       false
     end
   end
-  #
-  # def winner(board)
-  #   if over?(board)
-  #     if won?(board)
-  #       win_combination = won?(board)
-  #       character = board[win_combination[0]]
-  #     else
-  #       nil
-  #     end
-  #   end
-  # end
-  #
+  
+  def winner
+    if over?
+      if won?
+        win_combination = won?
+        character = @board[win_combination[0]]
+      else
+        nil
+      end
+    end
+  end
+  
   # def play(board)
   #   until over?(board)
   #     turn(board)
