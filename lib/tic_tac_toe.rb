@@ -89,11 +89,11 @@ class TicTacToe
     end
     false
   end
-  
+
   def full?
     @board.none?{|space| space == " "}
   end
-  
+
   def draw?
     if full? && !won?
       true
@@ -101,14 +101,14 @@ class TicTacToe
       false
     end
   end
-  #
-  # def over?(board)
-  #   if draw?(board) || won?(board)
-  #     true
-  #   else
-  #     false
-  #   end
-  # end
+  
+  def over?
+    if draw? || won?
+      true
+    else
+      false
+    end
+  end
   #
   # def winner(board)
   #   if over?(board)
