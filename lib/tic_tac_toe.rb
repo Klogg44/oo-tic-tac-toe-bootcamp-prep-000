@@ -88,5 +88,51 @@ class TicTacToe
     end
     false
   end
+  
+  def full?(board)
+    board.none?{|space| space == " "}
+  end
+
+  def draw?(board)
+    if full?(board) && !won?(board)
+      true
+    else
+      false
+    end
+  end
+
+  def over?(board)
+    if draw?(board) || won?(board)
+      true
+    else
+      false
+    end
+  end
+
+  def winner(board)
+    if over?(board)
+      if won?(board)
+        win_combination = won?(board)
+        character = board[win_combination[0]]
+      else
+        nil
+      end
+    end
+  end
+
+  def play(board)
+    until over?(board)
+      turn(board)
+    end
+
+    if winner(board) == "X"
+      puts "Congratulations X!"
+    elsif winner(board) == "O"
+      puts "Congratulations O!"
+    else
+      puts "Cat's Game!"
+    end
+  end
+
 
 end
