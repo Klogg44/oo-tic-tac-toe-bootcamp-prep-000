@@ -27,14 +27,14 @@ class TicTacToe
     user_input.to_i - 1
   end
 
-  # def move(board, index, current_player)
-  #   board[index] = current_player
-  # end
-  #
+  def move(index, current_player)
+    @board[index] = current_player
+  end
+  
   def position_taken?(index)
     !(@board[index].nil? || @board[index] == " ")
   end
-  
+
   def valid_move?(index)
     index.between?(0,8) && !position_taken?(index)
   end
@@ -51,23 +51,23 @@ class TicTacToe
   #   end
   # end
   #
-  # def turn_count(board)
-  #   counter = 0
-  #   board.each do |space|
-  #     if space == "X" || space == "O"
-  #       counter += 1
-  #     end
-  #   end
-  #   counter
-  # end
+  def turn_count
+    counter = 0
+    @board.each do |space|
+      if space == "X" || space == "O"
+        counter += 1
+      end
+    end
+    counter
+  end
   #
-  # def current_player(board)
-  #   if turn_count(board).even?
-  #     "X"
-  #   else
-  #     "O"
-  #   end
-  # end
+  def current_player
+    if turn_count.even?
+      "X"
+    else
+      "O"
+    end
+  end
   #
   # def won? (board)
   #   if board.any?{ |space| space != " " }
