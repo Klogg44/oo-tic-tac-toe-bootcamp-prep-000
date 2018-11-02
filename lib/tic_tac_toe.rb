@@ -88,7 +88,7 @@ class TicTacToe
     end
     false
   end
-  
+
   def full?(board)
     board.none?{|space| space == " "}
   end
@@ -133,6 +133,5 @@ class TicTacToe
       puts "Cat's Game!"
     end
   end
-
-
+  
 end
